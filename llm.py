@@ -6,12 +6,11 @@ load_dotenv()
 
 endpoint = os.getenv("PLAYGROUND_AOAI_ENDPOINT")
 api_token = os.getenv("PLAYGROUND_LLM_API_TOKEN")
-deployment_name = os.getenv("AOAI_DEPLOY_GPT4O_MINI")
 
 model = AzureChatOpenAI(
     openai_api_key='no-need-api-key-but-never-remove-this-line',
     azure_endpoint=endpoint,
-    azure_deployment=deployment_name,
+    azure_deployment="gpt-4o-mini",
     api_version="2024-10-21",
     default_headers={
         "Authorization": f"Basic {api_token}"
